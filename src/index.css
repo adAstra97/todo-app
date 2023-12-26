@@ -1,0 +1,225 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:700);
+
+:root {
+  --red: #ff5631;
+  --black-bg: #0d0d0d;
+  --border-color: #6E6659;
+  --text-color: #CEBEA4;
+  --field-color: #1E1E1E;
+  --green: rgb(87, 203, 76);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  border-radius: 5px;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body, input[type="text"] {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--black-bg);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  max-width: 45rem;
+  margin: 0 auto;
+  padding: 0 10px;
+  margin-top: 30px;
+}
+
+/* header */
+
+.header {
+  border: 2px solid var(--border-color);
+  border-radius: 35px;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.header__left > span {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.header__right > span {
+  font-size: 4rem;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  display: flex;
+  width: 140px;
+  height: 140px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--red);
+  border-radius: 50%;
+  color: var(--black-bg);
+  box-shadow: 0 0 5px 0 rgba(255, 87, 49, 0.627),  0 0 15px 0 rgb(255, 87, 49);
+  user-select: none;
+}
+
+.header__right.success > span {
+  background-color: var(--green);
+  box-shadow: 0 0 2px 0 rgba(87, 203, 76, 0.627),  0 0 15px 0 rgb(87, 203, 76);
+}
+
+/* form */
+
+form {
+  display: flex;
+  gap: 18px;
+  padding: 0 10px;
+}
+
+form > input {
+  background-color: var(--field-color);
+  padding: 0 20px;
+  border: 1px solid transparent;
+  outline: none;
+  color: var(--text-color);
+  border-radius: 20px;
+  font-size: 1.7rem;
+  width: 100%;
+}
+
+form > input:focus {
+  border: 1px solid #CEBEA4;
+}
+
+form > input::placeholder {
+  color: var(--border-color);
+}
+
+form > button {
+  background-color: var(--red);
+  outline: none;
+  border: none;
+  width: 67px;
+  height: 53px;
+  border-radius: 50%;
+  color: var(--black-bg);
+  font-weight: 900;
+  font-size: 2.8rem;
+  box-shadow: 0 0 5px 0 rgba(255, 87, 49, 0.627),  0 0 10px 0 rgb(255, 87, 49);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+form > button:hover {
+  box-shadow: none;
+}
+
+form > button:active {
+  box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
+}
+
+/*list of tasks*/
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 40vh;
+  overflow-y: auto;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--field-color);
+  border: 2px solid var(--border-color);
+  list-style: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.item__row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item__row > button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.item__row > button path {
+  transition: 0.2s;
+}
+
+.item__row > button:hover path {
+  fill: var(--text-color);
+}
+
+.item__status {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--red);
+  display: block;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 2px 0 rgba(255, 87, 49, 0.627),  0 0 5px 0 rgb(255, 87, 49);
+  cursor: pointer;
+}
+
+.item__row.success .item__status {
+  background-color: var(--green);
+  border: 2px solid var(--green);
+  box-shadow: 0 0 2px 0 rgba(87, 203, 76, 0.627),  0 0 5px 0 rgb(87, 203, 76);
+}
+
+.item__title {
+  font-size: 2.0rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.item__row.success .item__title {
+  text-decoration: line-through;
+}
+
+.no-tasks {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
