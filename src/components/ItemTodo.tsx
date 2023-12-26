@@ -1,3 +1,4 @@
+import React from 'react';
 import {FaRegEdit} from 'react-icons/fa';
 import {AiOutlineDelete} from 'react-icons/ai';
 import { Todo } from '../types';
